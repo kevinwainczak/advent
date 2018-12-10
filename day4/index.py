@@ -1,5 +1,5 @@
-import urllib.request
 
+## Taken from stacked overflow
 def cmp_to_key(mycmp):
     'Convert a cmp= function into a key= function'
     class K(object):
@@ -57,14 +57,11 @@ def timestamp_compare(x, y):
     return 0
 
 def get_guard_data():
-    opener = urllib.request.build_opener()
-    opener.addheaders.append(('Cookie', 'session=53616c7465645f5f979679f915a848580bba01ea0e2ed04cf63187d31932999ae9fbabca26d1cfdc36b3951649b6de85'))
-    url = 'https://adventofcode.com/2018/day/4/input'
-    f = opener.open(url)
+    file = open('input.txt', 'r')
     unsorted = []
-    for line in f.readlines():
+    for line in file.readlines():
         # decode the line
-        line = bytes.decode(line).splitlines()[0]
+        line = line.splitlines()[0]
 
         # get the timestamp
         separatorIndex = line.find("]") + 1

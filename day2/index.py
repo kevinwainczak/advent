@@ -1,13 +1,8 @@
-import urllib.request
-
 def get_box_id_list():
-    opener = urllib.request.build_opener()
-    opener.addheaders.append(('Cookie', 'session=53616c7465645f5f979679f915a848580bba01ea0e2ed04cf63187d31932999ae9fbabca26d1cfdc36b3951649b6de85'))
-    url = 'https://adventofcode.com/2018/day/2/input'
-    f = opener.open(url)
+    file = open('input.txt', 'r')
     result = []
-    for line in f.readlines():
-        line = bytes.decode(line).splitlines()[0]
+    for line in file.readlines():
+        line = line.splitlines()[0]
         result.append(line)
     return result
 
@@ -59,7 +54,6 @@ def findOffByOneIds(ids):
 def closestStrings():
     box_ids = get_box_id_list()
     (id1, id2) = findOffByOneIds(box_ids)
-    print(id1, id2)
     result = ""
     for i in range(0, len(id1)):
         if id1[i] == id2[i]:

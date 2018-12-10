@@ -1,13 +1,8 @@
-import urllib.request
-
 def get_claims_list():
-    opener = urllib.request.build_opener()
-    opener.addheaders.append(('Cookie', 'session=53616c7465645f5f979679f915a848580bba01ea0e2ed04cf63187d31932999ae9fbabca26d1cfdc36b3951649b6de85'))
-    url = 'https://adventofcode.com/2018/day/3/input'
-    f = opener.open(url)
+    file = open('input.txt', 'r')
     result = []
-    for line in f.readlines():
-        line = bytes.decode(line).splitlines()[0]
+    for line in file.readlines():
+        line = line.splitlines()[0]
         segments = line.split(" ")
         pos = segments[2].split(',')
         x = int(pos[0])
@@ -19,13 +14,10 @@ def get_claims_list():
     return result
 
 def get_claims_list_with_id():
-    opener = urllib.request.build_opener()
-    opener.addheaders.append(('Cookie', 'session=53616c7465645f5f979679f915a848580bba01ea0e2ed04cf63187d31932999ae9fbabca26d1cfdc36b3951649b6de85'))
-    url = 'https://adventofcode.com/2018/day/3/input'
-    f = opener.open(url)
+    file = open('input.txt', 'r')
     result = []
-    for line in f.readlines():
-        line = bytes.decode(line).splitlines()[0]
+    for line in file.readlines():
+        line = line.splitlines()[0]
         segments = line.split(" ")
         ID = segments[0]
         pos = segments[2].split(',')

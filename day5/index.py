@@ -1,13 +1,8 @@
-import urllib.request
-
 def get_polymer_data():
-    opener = urllib.request.build_opener()
-    opener.addheaders.append(('Cookie', 'session=53616c7465645f5f979679f915a848580bba01ea0e2ed04cf63187d31932999ae9fbabca26d1cfdc36b3951649b6de85'))
-    url = 'https://adventofcode.com/2018/day/5/input'
-    f = opener.open(url)
-    for line in f.readlines():
+    file = open('input.txt', 'r')
+    for line in file.readlines():
         # decode the line
-        line = bytes.decode(line).splitlines()[0]
+        line = line.splitlines()[0]
     return line
         
 def does_cancel(x,y):
