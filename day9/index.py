@@ -56,8 +56,6 @@ def find_highest_score(last_marble_points):
     last_marble_played = -1
     while last_marble_played != last_marble_points:
         last_marble_played = game.place_marble()
-        #if last_marble_played % 1000 == 0:
-            #print(((last_marble_played/last_marble_points) * 100), '%')
     best_elf = ''
     best_score = -1
     scores = game.get_elf_scores()
